@@ -2,7 +2,7 @@ require('dotenv').config()
 const HDWalletProvider = require('@truffle/hdwallet-provider')
 
 
-
+process.env.UV_THREADPOOL_SIZE = 128;
 
 module.exports = {
   networks: {

@@ -1,5 +1,5 @@
 // migrations/2_deploy.js
-const ERC20Token = artifacts.require('ERC20Token');
+const ERC20Token = artifacts.require('./ERC20Token');
 const ERC721Token = artifacts.require('ERC721Token');
 
 
