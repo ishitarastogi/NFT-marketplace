@@ -3,6 +3,7 @@ pragma solidity ^0.8.3;
 
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "./ERC20Token.sol";
 
 
 contract NFTMarket  {
@@ -11,10 +12,13 @@ contract NFTMarket  {
   Counters.Counter private _itemsSold; // No of items sold
 
   address payable owner; // Owner is the owner of the contract who makes commission on every transaction
-  uint listingPrice= 0.5 ether;
+  uint listingPrice= 0.5 ether; //listing price put by seller
+  ERC20Token public tokenAddress;// ERC20 Token address for payment method
 
-  constructor() {
+  constructor(address _tokenAddress) {
       owner = payable(msg.sender);
+     tokenAddress = ERC20Token(_tokenAddress);
+
   }
 
   struct Items{
